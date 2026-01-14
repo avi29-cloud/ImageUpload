@@ -1,0 +1,16 @@
+#from django.shortcuts import render
+from django.views.generic import ListView, CreateView
+from django.urls import reverse_lazy
+from .forms import PostForm
+from .models import Post
+# Create your views here.
+
+class HomePageView(ListView):
+    model = Post
+    template_name ='home.html'
+
+class CreatePostView(CreateView):
+    model = Post
+    template_name = 'post.html' 
+    fields = ['title', 'image']  
+    success_url = '/'            # You'll likely need this next!
