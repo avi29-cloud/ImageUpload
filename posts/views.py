@@ -13,4 +13,4 @@ class CreatePostView(CreateView):
     model = Post
     template_name = 'post.html' 
     fields = ['title', 'image']  
-    success_url = '/'            # You'll likely need this next!
+    success_url = '/'           
